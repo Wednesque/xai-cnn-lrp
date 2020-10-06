@@ -1,8 +1,5 @@
 # xai-cnn-lrp
-This repository contains codes to explain One-Dimensional Convolutional Neural Networks (1D-CNN) using Layer-wise Relevance Propagation. 
-The explanation technique consists in computing the relevance of the various n-gram features and determine sufficient and necessary n-grams. 
-Codes developed in this project was designed for experimental purposes and cannot be used in the state to handle all the types of 1D-CNN architecture without any adaptation. 
-The project comes with a multi-channel 1D-CNN model generator which can be used to generate testing models.
+This repository contains codes to explain One-Dimensional Convolutional Neural Networks (1D-CNN) using Layer-wise Relevance Propagation. The explanation technique consists in computing the relevance of the various n-gram features and determining sufficient and necessary n-grams. Codes developed in this project were designed for experimental purposes and cannot be used in the state to handle all the types of 1D-CNN architecture without any adaptation. The project comes with a multi-channel 1D-CNN model generator which can be used to generate testing models.
 
 # Dependencies :
     - python 3.6+
@@ -12,19 +9,19 @@ The project comes with a multi-channel 1D-CNN model generator which can be used 
 
 The project contains 4 main directories :
 
---data/sentiment_analysis
-  This directory contains training and test data to build 1D-CNN models  and test the explanation method
+ - data/sentiment_analysis
+   This directory contains training and test data to build 1D-CNN models and to test the explanation method
 
--- models :
-  This directory contains pretrained 1D-CNN models for sentiment analysis and for question answering task.
+ -  models :
+   This directory contains pretrained 1D-CNN models for sentiment analysis and for question answering tasks.
 
--- tokenizers :
-  This directory contains saved keras tokenizer for different datasets. The tokenizer contains the vocabulary that was used
-  to train the pretrained model associated to the dataset
+ -  tokenizers :
+   This directory contains saved keras tokenizers for various datasets. A tokenizer contains the vocabulary that was used
+   to build the pretrained model. 
 
--- explanations :
-  This directory contains the results of explanations when executing the file explain_cnn.py. The explanations provided are contained in a json
-  file associated to the name of the dataset/model to explain.
+ - explanations :
+   This directory contains the results of explanations when executing the file explain_cnn.py. The explanations provided are contained in a json
+   file associated which name is associated to the name of the model to explain.
 
 # Explaining a model
 - The file explain_cnn.py already has default value. python explain_cnn.py to execute the explainer with the default configurations.
