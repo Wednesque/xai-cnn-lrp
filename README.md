@@ -61,18 +61,11 @@ a variable number of channels (from 1 to n), a single global max-pooling layer, 
 and a variable number of filters and kernel_sizes per channel.
       - Further versions will take into account models with a variable number of dense layers.
 
-# Explanation results
+# Model explanation results
 
 The complete json file representing the explanation for a set of predictions is structured as follows :
-The json file is in the form of a list of elements where each element represents the explanation of a particular input sentence
-The json element representing the explanation of each sentence was designed to be self-explanatory. Contributions are in the form
-- ngram feature :
-   - CLASS_NAME : value
 
-Overall represents the relevance of the feature to the class predicted as the difference between its contribution to this class
-and the mean of its contribution to other classes except the predicted class.
-
-[
+    [
     {
         "sentence": [
             "it was either too cold not enough flavor or just bad"
@@ -112,7 +105,16 @@ and the mean of its contribution to other classes except the predicted class.
         }
     },
     ...
-   ]
+    ]
+
+The json file is in the form of a list of elements where each element represents the explanation of a particular input sentence
+The json element representing the explanation of each sentence was designed to be self-explanatory. Contributions are in the form
+- ngram feature :
+   - CLASS_NAME : value
+
+Overall represents the relevance of the feature to the class predicted as the difference between its contribution to this class
+and the mean of its contribution to other classes except the predicted class.
+
 
 "0-ngram" represents ngram features which are not in the vocabulary or the translation of 0-padding sequences
 
