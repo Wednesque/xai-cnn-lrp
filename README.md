@@ -107,38 +107,37 @@ The complete json file representing the explanation for a set of predictions is 
     ...
     ]
 
-The json file is in the form of a list of elements where each element represents the explanation of a particular input sentence
-The json element representing the explanation of each sentence was designed to be self-explanatory. Contributions are in the form
-- ngram feature :
+The json file is in the form of a list of elements where each element represents the explanation for a particular input sentence
+which has been designed to be self-explanatory. Contributions are in the form
+- ngram_feature :
    - CLASS_NAME : value
 
-Overall represents the relevance of the feature to the class predicted as the difference between its contribution to this class
+- The value of the key "Overall" represents the relevance of the feature to the class predicted as the difference between its contribution to this class
 and the mean of its contribution to other classes except the predicted class.
 
+"0-ngram" represents ngram features which are not in the vocabulary or the translation of 0-padding sequences.
 
-"0-ngram" represents ngram features which are not in the vocabulary or the translation of 0-padding sequences
 
-=======
-Training a 1D-CNN model
-=======
+# Training a 1D-CNN model
 The project comes with codes to trained your own 1D-CNN.
 To build your own CNN model
 1. Defines the following parameters.
 
- - model_name : models names are defined in the variable file_path_dic. If you want to build a model from your
-own dataset, make sure the data file is saved inside the directory data/sentiment analysis and that its format is as described in data/readme.txt
-Also make sure to add an entry corresponding to the data file in the dictionary file_path_dic
- - embedding_dim : the dimension of word embeddings
- - n_classes : The number of classes in the dataset
- - max_words : The maximum number of words per sentence. Sentences with less word will be padded and sentences with higher number of words will
+     - model_name : models names are defined in the variable file_path_dic. If you want to build a model from your
+      own dataset, make sure the data file is saved inside the directory data/sentiment analysis and that its format is as described in data/readme.txt
+      Also make sure to add an entry corresponding to the data file in the dictionary file_path_dic
+     - embedding_dim : the dimension of word embeddings
+     - n_classes : The number of classes in the dataset
+     - max_words : The maximum number of words per sentence. Sentences with less word will be padded and sentences with higher number of words will
                be pruned to reach the max_words
- - kernel_sizes : a list of integers indicating the kernel_size per channel. Example : kernel_sizes = [1,2,3] means that they are 3 channels
-   and the first channel has filters of kernel_size 1, the second channel has filters of kernel_sizes 2 and the third channel has filters of
-   kernel sizes 3
+     - kernel_sizes : a list of integers indicating the kernel_size per channel. Example : kernel_sizes = [1,2,3] means that they are 3 channels
+       and the first channel has filters of kernel_size 1, the second channel has filters of kernel_sizes 2 and the third channel has filters of kernel sizes 3
+     - n_filters : a list representing the number of filters per channel. Example : n_filters = [40,40,40]. It means that every channel has 40 filters
+       which makes a total of 120 filters.
+       NB : len(kernel_sizes) == len (n_filters)
 
- - n_filters : a list representing the number of filters per channel. Example : n_filters = [40,40,40]. It means that every channel has 40 filters
- which makes a total of 120 filters.
-   NB : len(kernel_sizes) == len (n_filters)
+2. After execute the command :
 
-2. After execute the command python train_1d_cnn.py
-   The model will be saved in the directory models under a name related to the name defined in the variable model_name
+       python train_1d_cnn.py
+    
+The model will be saved in the directory models under a name related to the name defined in the variable model_name
