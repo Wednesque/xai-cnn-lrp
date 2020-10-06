@@ -30,30 +30,36 @@ The file explain_cnn.py already has default values. To execute the explainer wit
   
       python explain_cnn.py
       
-By default, this command will compute the explanation of the first 10 sentence of the "merged" dataset (yelp+amazon+imdb). The results will be in the file
+By default, this command will compute the explanation of the first 10 sentences of the "merged" dataset (yelp+amazon+imdb). The result will be in the file
 ./explanations/merged_all_features_ngrams.json
 
 ## Custom configurations :
 For custom configurations, execute the following actions :
    1. open the file explain_cnn.py an edit the model parameters :
+   
       - set the variable model_name to the model you want to explain. Pretrained model_names are : imdb, qa_1000, qa_5500, and merged
       - Set the variable n_classes to the number of classes.
+      - Set the embedding dimension (embedding_dim) and the maximum number of words per sentence.
         By default, the pretrained models was built with a word embedding dimension of 50 and a maximum number of words per sentence of 50
-      - Set the variable class_names to the name of classes : class_names = ['NEGATIVE','POSITIVE'] for Sentiment analysis
+      - Set the variable class_names to the name of classes : 
+        class_names = ['NEGATIVE','POSITIVE'] for Sentiment analysis
         or class_names =  ['DESC','ENTY','ABBR','HUM','NUM','LOC'] for Question Answering
       - Set the variable embedding_dim to the dimension of the embedding vectors.
       - The variable kernel_sizes is a list of integers representing the  kernel_size per channel. Example : kernel_sizes = [1,2,3]
+      
    2. run the command python explain_cnn.py
+   
    3. The result of the explanation is contained in the directory explanations under the name : <model_name>_all_feature_ngrams.json
 
-To explain the model on a single sentence :
-   edit and execute the file explain_sentence.py
+## To explain the model on a single sentence :
+Edit the file explain_sentence.py and set the appropriate parameters or leave the default ones. Then run the command :
 
-The code implemented to explain 1D-CNN assumes that the CNN architecture taken as input has exactly 2 dense layers,
+    python explain_sentence.py
+
+N.B : - The code implemented to explain 1D-CNN assumes that the CNN architecture taken as input has exactly 2 dense layers,
 a variable number of channels (from 1 to n), a single global max-pooling layer, one convolution layer per channel
 and a variable number of filters and kernel_sizes per channel.
-
-NB: Further versions will take into account models with a variable number of dense layers.
+      - Further versions will take into account models with a variable number of dense layers.
 
 # Explanation results
 
