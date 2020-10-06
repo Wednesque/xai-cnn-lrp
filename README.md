@@ -24,11 +24,13 @@ The project contains 4 main directories :
    file associated which name is associated to the name of the model to explain.
 
 # Explaining a model
-==Quick start :
-  The file explain_cnn.py already has default values. To execute the explainer with the default configurations. simply run the following command :
+
+## Quick start :
+The file explain_cnn.py already has default values. To execute the explainer with the default configurations. simply run the following command :
+  
       - python explain_cnn.py
-      
-==For custom configurations, execute the following actions :
+## Custom configurations :
+For custom configurations, execute the following actions :
    1. open the file explain_cnn.py an edit the model parameters :
       - set the variable model_name to the model you want to explain. Pretrained model_names are : imdb, qa_1000, qa_5500, and merged
       - Set the variable n_classes to the number of classes.
