@@ -52,7 +52,8 @@ For custom configurations, execute the following actions :
    3. The result of the explanation is contained in the directory explanations under the name : <model_name>_all_feature_ngrams.json
 
 ## To explain the model on a single sentence :
-Edit the file explain_sentence.py and set the appropriate parameters or leave the default ones. Then run the command :
+Edit the file explain_sentence.py and set the appropriate parameters or leave the default ones. Modify the variable <sent> with the sentence to explain
+Then run the command :
 
     python explain_sentence.py
 
