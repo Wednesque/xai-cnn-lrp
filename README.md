@@ -4,7 +4,7 @@ The explanation technique consists in computing the relevance of the various n-g
 Codes developed in this project was designed for experimental purposes and cannot be used in the state to handle all the types of 1D-CNN architecture without any adaptation. 
 The project comes with a multi-channel 1D-CNN model generator which can be used to generate testing models.
 
--- Dependencies :
+# Dependencies :
     - python 3.6+
     - keras (tested on 2.2+)
     - numpy (1.16+)
@@ -26,9 +26,7 @@ The project contains 4 main directories :
   This directory contains the results of explanations when executing the file explain_cnn.py. The explanations provided are contained in a json
   file associated to the name of the dataset/model to explain.
 
-=======
-Explaining a model
-=======
+# Explaining a model
 - The file explain_cnn.py already has default value. python explain_cnn.py to execute the explainer with the default configurations.
 - To explain another model on a set of samples, execute the following actions :
    1. open the file explain_cnn.py an edit the model parameters :
