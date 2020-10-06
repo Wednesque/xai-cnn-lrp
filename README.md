@@ -24,8 +24,11 @@ The project contains 4 main directories :
    file associated which name is associated to the name of the model to explain.
 
 # Explaining a model
-- The file explain_cnn.py already has default value. python explain_cnn.py to execute the explainer with the default configurations.
-- To explain another model on a set of samples, execute the following actions :
+==Quick start :
+  The file explain_cnn.py already has default values. To execute the explainer with the default configurations. simply run the following command :
+      - python explain_cnn.py
+      
+==For custom configurations, execute the following actions :
    1. open the file explain_cnn.py an edit the model parameters :
       - set the variable model_name to the model you want to explain. Pretrained model_names are : imdb, qa_1000, qa_5500, and merged
       - Set the variable n_classes to the number of classes.
@@ -37,7 +40,7 @@ The project contains 4 main directories :
    2. run the command python explain_cnn.py
    3. The result of the explanation is contained in the directory explanations under the name : <model_name>_all_feature_ngrams.json
 
-#To explain the model on a single sentence :
+To explain the model on a single sentence :
    edit and execute the file explain_sentence.py
 
 The code implemented to explain 1D-CNN assumes that the CNN architecture taken as input has exactly 2 dense layers,
@@ -46,10 +49,8 @@ and a variable number of filters and kernel_sizes per channel.
 
 NB: Further versions will take into account models with a variable number of dense layers.
 
+# Explanation results
 
-=======
-Explanation results
-=======
 The complete json file representing the explanation for a set of predictions is structured as follows :
 The json file is in the form of a list of elements where each element represents the explanation of a particular input sentence
 The json element representing the explanation of each sentence was designed to be self-explanatory. Contributions are in the form
