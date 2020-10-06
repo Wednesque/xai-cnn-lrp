@@ -28,7 +28,11 @@ The project contains 4 main directories :
 ## Quick start :
 The file explain_cnn.py already has default values. To execute the explainer with the default configurations. simply run the following command :
   
-      - python explain_cnn.py
+      python explain_cnn.py
+      
+By default, this command will compute the explanation of the first 10 sentence of the "merged" dataset (yelp+amazon+imdb). The results will be in the file
+./explanations/merged_all_features_ngrams.json
+
 ## Custom configurations :
 For custom configurations, execute the following actions :
    1. open the file explain_cnn.py an edit the model parameters :
