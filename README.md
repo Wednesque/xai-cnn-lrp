@@ -37,7 +37,7 @@ By default, this command will compute the explanation of the first 10 sentences 
 For custom configurations, execute the following actions :
    1. open the file explain_cnn.py an edit the model parameters :
    
-      - set the variable model_name to the model you want to explain. Pretrained model_names are : imdb, qa_1000, qa_5500, and merged
+      - set the variable model_name to the model you want to explain. Pretrained model_names are : merged (sentiment analysis), qa_1000 and qa_5500 (Question answering)
       - Set the variable n_classes to the number of classes.
       - Set the embedding dimension (embedding_dim) and the maximum number of words per sentence.
         By default, the pretrained models was built with a word embedding dimension of 50 and a maximum number of words per sentence of 50
