@@ -47,6 +47,9 @@ For custom configurations, execute the following actions :
       - Set the variable embedding_dim to the dimension of the embedding vectors.
       - The variable kernel_sizes is a list of integers representing the  kernel_size per channel. Example : kernel_sizes = [1,2,3]
       
+      N.B : If you are not sure of which parameters to use for a particular model, then you should consider building a new model with your 
+            own parameter (see the section : Training a 1D-CNN model below)
+      
    2. run the command python explain_cnn.py
    
    3. The result of the explanation is contained in the directory explanations under the name : <model_name>_all_feature_ngrams.json
