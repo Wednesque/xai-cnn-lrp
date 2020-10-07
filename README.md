@@ -86,6 +86,13 @@ The complete json file representing the explanation for a set of predictions is 
                             "Overall": 0.13717123866081238
                         }
                     },
+                    {
+                        "not": {
+                            "NEGATIVE": 0.1827062964439392,
+                            "POSITIVE": -0.19882133603096008,
+                            "Overall": 0.38679349422454834
+                        }
+                    },
                 ...
                 ],
                 "0-ngrams": [
