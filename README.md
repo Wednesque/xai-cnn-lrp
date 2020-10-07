@@ -21,7 +21,7 @@ The project contains 4 main directories :
 
  - explanations :
    This directory contains the results of explanations when executing the file explain_cnn.py. The explanations provided are contained in a json
-   file associated which name is associated to the name of the model to explain.
+   file which name is related to the name of the model to explain.
 
 # Explaining a model
 
@@ -130,11 +130,12 @@ and the mean of its contribution to other classes except the predicted class.
 
 
 # Training a 1D-CNN model
-The project comes with codes to trained your own 1D-CNN.
-To build your own CNN model
-1. Defines the following parameters.
+The project comes with codes to train your own 1D-CNN.
+To build your own CNN model for text classification do the followings :
 
-     - model_name : models names are defined in the variable file_path_dic. If you want to build a model from your
+1. Defines the model parameters.
+
+     - model_name : models names are defined in the variable file_path_dic defined in the file preprocessor/Preprocessor.py. If you want to build a model from your
       own dataset, make sure the data file is saved inside the directory data/sentiment analysis and that its format is as described in data/readme.txt
       Also make sure to add an entry corresponding to the data file in the dictionary file_path_dic
      - embedding_dim : the dimension of word embeddings
